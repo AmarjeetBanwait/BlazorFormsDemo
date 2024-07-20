@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CoreWebFormsVersion>2.0.0</CoreWebFormsVersion>
+  </PropertyGroup>
+  
+	<ItemGroup>
+		<PackageVersion Include="MasonChase.CoreWebForms" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Routing" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.SqlClient" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Extensions" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.HttpHandler" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.VirtualFile" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Optimization" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.HtmlTextWriter" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Shim.SystemWeb" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Shim.Infrastructure" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.ConfigurationManager" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Shim.SystemWeb.Extensions" Version="$(CoreWebFormsVersion)" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Compiler" Version="$(CoreWebFormsVersion)" PrivateAssets="all" IncludeAssets="all" />
+		<PackageVersion Include="MasonChase.CoreWebForms.Compiler.Dynamic" Version="$(CoreWebFormsVersion)" Condition=" '$(EnableRuntimeAspxCompilation)' == 'true' " />
+	</ItemGroup>
+</Project>

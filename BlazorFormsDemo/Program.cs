@@ -2,7 +2,9 @@ using BlazorFormsDemo;
 using BlazorFormsDemo.Components;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.UseWebConfig(isOptional: false);
 
+builder.Services.AddResponseCompression();
 builder.Services.AddRazorComponents();
 
 #region Core Forms
@@ -21,20 +23,29 @@ builder.Services.AddSystemWebAdapters()
 		options.RegisterModule<PageHandler>("PageHandler");
 	})
 	.AddWebForms()
-.AddDynamicPages();
-//.AddCompiledPages();
+#if WEBFORMS_DYNAMIC
+    .AddDynamicPages();
+#else
+    .AddCompiledPages();
+#endif
+
 #endregion
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
 	app.UseExceptionHandler("/Error", createScopeForErrors: true);
-	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 	app.UseHsts();
 }
 
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseResponseCompression();
+app.UseResponseCaching();
 app.UseHttpsRedirection();
 
 app.UseRouting();
