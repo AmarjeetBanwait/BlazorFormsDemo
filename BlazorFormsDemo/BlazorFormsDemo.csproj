@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<EnableRuntimeAspxCompilation>true</EnableRuntimeAspxCompilation>
+		<InterceptorsPreviewNamespaces>$(InterceptorsPreviewNamespaces);WebForms.Generated</InterceptorsPreviewNamespaces>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MasonChase.CoreWebForms" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Routing" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.SqlClient" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Extensions" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.HttpHandler" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.VirtualFile" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Optimization" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Shim.SystemWeb" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.HtmlTextWriter" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Shim.Infrastructure" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.ConfigurationManager" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Shim.SystemWeb.Extensions" Version="2.0.0" />
+		<PackageReference Include="MasonChase.CoreWebForms.Compiler.Dynamic" Version="2.0.0" Condition=" '$(EnableRuntimeAspxCompilation)' == 'true' " />
+		<PackageReference Include="MasonChase.CoreWebForms.Compiler" Version="2.0.0" PrivateAssets="all" IncludeAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="System" />
+		<Using Include="System.Web" />
+		<Using Include="System.Web.UI" />
+		<Using Include="System.Web.UI.WebControls" />
+		<Using Include="System.Collections.Generic" />
+		<Using Include="System.Linq" />
+	</ItemGroup>
+
+</Project>
